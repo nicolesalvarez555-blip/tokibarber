@@ -269,7 +269,7 @@
         console.error("Error enviando por form.submit():", err);
       }
 
-      const mensajeWA = `Hola! Soy ${nombre}. Quiero reservar un turno para ${servicio} el ${fecha}.`;
+      const mensajeWA = `Hola! Soy ${nombre}. Quiero reservar un turno para   ${servicio}   el   ${fecha}.`;
       const waUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(mensajeWA)}`;
       window.open(waUrl, "_blank");
 
@@ -279,4 +279,5 @@
   </script>
 </body>
 </html>
+
 
