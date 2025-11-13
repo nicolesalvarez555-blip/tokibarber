@@ -5,27 +5,157 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Toki Barbería</title>
   <style>
-    body { font-family: 'Poppins', sans-serif; margin:0; background:#fff; color:#222 }
-    header { background:#b30000; color:#fff; text-align:center; padding:30px 10px }
-    header h1{ margin:0; font-size:2.2em }
-    nav{ background:#111; display:flex; justify-content:center; gap:20px; padding:10px }
-    nav a{ color:#fff; text-decoration:none; font-weight:700 }
-    section{ padding:40px 20px; text-align:center }
-    .gallery{ display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:15px; margin-top:20px }
-    .gallery img{ width:100%; border-radius:10px; transition:transform .3s }
-    .gallery img:hover{ transform:scale(1.05) }
-    .prices{ max-width:600px; margin:auto; text-align:left; background:#f4f4f4; padding:20px; border-radius:10px }
-    .prices ul{ list-style:none; padding:0 }
-    .prices li{ display:flex; justify-content:space-between; margin:10px 0; font-size:1.1em }
-    form{ max-width:500px; margin:auto; background:#f9f9f9; padding:20px; border-radius:10px; text-align:left }
-    label{ display:block; margin-bottom:8px; font-weight:700 }
-    input, select{ width:100%; padding:10px; margin-bottom:15px; border-radius:5px; border:1px solid #ccc }
-    button{ background:#b30000; color:#fff; border:none; padding:12px 20px; border-radius:5px; cursor:pointer; font-size:1em }
-    button:hover{ background:#ff1a1a }
-    footer{ background:#111; color:#fff; text-align:center; padding:20px; margin-top:40px }
-    .social a{ color:#fff; margin:0 10px; text-decoration:none; font-size:1.3em }
+    /* === ESTILOS GENERALES === */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      color: #fff;
+      /* Fondo con imagen + capa oscura */
+      background: 
+        linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+        url('https://images.pexels.com/photos/4862662/pexels-photo-4862662.jpeg?auto=compress&cs=tinysrgb&h=627&fit=crop&w=1200') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    header {
+      background: rgba(179, 0, 0, 0.85);
+      color: #fff;
+      text-align: center;
+      padding: 30px 10px;
+      border-bottom: 3px solid #fff;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.4em;
+    }
+
+    nav {
+      background: rgba(17,17,17,0.9);
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    h2 {
+      color: #ffb3b3;
+      text-shadow: 0 0 5px #000;
+    }
+
+    /* === GALERÍA === */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      transition: transform .3s;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    /* === PRECIOS === */
+    .prices {
+      max-width: 600px;
+      margin: auto;
+      text-align: left;
+      background: rgba(255,255,255,0.1);
+      padding: 20px;
+      border-radius: 10px;
+      backdrop-filter: blur(6px);
+    }
+
+    .prices ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .prices li {
+      display: flex;
+      justify-content: space-between;
+      margin: 10px 0;
+      font-size: 1.1em;
+      color: #fff;
+    }
+
+    /* === FORMULARIO === */
+    form {
+      max-width: 500px;
+      margin: auto;
+      background: rgba(255,255,255,0.1);
+      padding: 20px;
+      border-radius: 10px;
+      text-align: left;
+      backdrop-filter: blur(6px);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: none;
+      outline: none;
+    }
+
+    button {
+      background: #b30000;
+      color: #fff;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1em;
+      width: 100%;
+    }
+
+    button:hover {
+      background: #ff1a1a;
+    }
+
+    footer {
+      background: rgba(17,17,17,0.9);
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    .social a {
+      color: #fff;
+      margin: 0 10px;
+      text-decoration: none;
+      font-size: 1.3em;
+    }
   </style>
 </head>
+
 <body>
   <header>
     <h1>💈 Toki Barbería 💈</h1>
@@ -41,7 +171,6 @@
   <section id="cortes">
     <h2>Galería de Cortes</h2>
     <div class="gallery">
-      <!-- reemplaza con tus propias imágenes locales si querés: img/corte1.jpg -->
       <img src="https://content.clara.es/medio/2024/06/12/cortes-de-pelo-hombre-moderno-fade_89fdae84_240612130424_800x816.webp" alt="Corte clásico">
       <img src="https://i.pinimg.com/originals/01/a1/ff/01a1ff83664d039eecbdcf7ba617fea3.jpg" alt="Corte moderno">
       <img src="https://i.pinimg.com/originals/42/0a/88/420a88bf02cf9f38499018bfbd61f038.jpg" alt="Fade">
@@ -63,7 +192,6 @@
   <section id="turno">
     <h2>Reservá tu turno</h2>
 
-    <!-- Form principal (este será enviado programáticamente a Apps Script usando form.submit()) -->
     <form id="formTurno" onsubmit="return false;">
       <label>Nombre completo:</label>
       <input type="text" id="nombre" required>
@@ -85,7 +213,7 @@
       <button id="btnReservar">Reservar turno</button>
     </form>
 
-    <p id="mensaje" style="text-align:center; font-weight:bold; color:#b30000; margin-top:15px;"></p>
+    <p id="mensaje" style="text-align:center; font-weight:bold; color:#fff; margin-top:15px;"></p>
   </section>
 
   <footer>
@@ -98,10 +226,8 @@
   </footer>
 
   <script>
-    // -------- CONFIGURACIÓN: reemplazá la URL del script y el número WhatsApp --------
-    const scriptURL = "https://script.google.com/macros/s/TU_URL_DEL_SCRIPT_AQUI/exec"; // <- pegá tu /exec
-    const whatsappNumber = "5493435453638"; // <- formato internacional: 54 + 9 + tu número sin 0/15
-    // ---------------------------------------------------------------------------------
+    const scriptURL = "https://script.google.com/macros/s/AKfycbz4LASgalzBMEsuJfgSOw1ZoQ_6Ag5M2bXybByggklN1bFh57raMPGcAEXqpA5twVo5/exec"; 
+    const whatsappNumber = "5493435452245"; 
 
     const btn = document.getElementById("btnReservar");
     const mensajeElem = document.getElementById("mensaje");
@@ -109,7 +235,6 @@
     btn.addEventListener("click", function(evt){
       evt.preventDefault();
 
-      // Leer valores
       const nombre = document.getElementById("nombre").value.trim();
       const telefono = document.getElementById("telefono").value.trim();
       const servicio = document.getElementById("servicio").value;
@@ -120,17 +245,15 @@
         return;
       }
 
-      mensajeElem.style.color = "#b30000";
+      mensajeElem.style.color = "#ffb3b3";
       mensajeElem.innerText = "Enviando turno...";
 
-      // 1) Enviar mediante un FORM POST tradicional para evitar CORS
       try {
         const form = document.createElement("form");
         form.action = scriptURL;
         form.method = "POST";
         form.style.display = "none";
 
-        // inputs
         const fields = { nombre, telefono, servicio, fecha };
         for (const key in fields) {
           const input = document.createElement("input");
@@ -140,22 +263,20 @@
         }
 
         document.body.appendChild(form);
-        form.submit(); // esto hace un POST directo al Apps Script (llega a tu hoja)
+        form.submit();
         form.remove();
       } catch (err) {
         console.error("Error enviando por form.submit():", err);
       }
 
-      // 2) Abrir WhatsApp para notificación inmediata
-      const mensajeWA = `Hola! Soy ${nombre}. Quiero reservar un turno para ${servicio} el ${fecha}. Mi número es ${telefono}.`;
+      const mensajeWA = `Hola! Soy ${nombre}. Quiero reservar un turno para ${servicio} el ${fecha}.`;
       const waUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(mensajeWA)}`;
       window.open(waUrl, "_blank");
 
-      // Feedback al usuario (no podemos leer respuesta por form.submit cross-origin)
       mensajeElem.innerText = "✅ Turno enviado. Te contactaremos por WhatsApp para confirmar.";
-      // reset del formulario local
       document.getElementById("formTurno").reset();
     });
   </script>
 </body>
 </html>
+
